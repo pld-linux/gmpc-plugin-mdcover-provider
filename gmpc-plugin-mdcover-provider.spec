@@ -2,22 +2,22 @@
 Summary:	Cover art from local directory provider plugin for Gnome Music Player Client
 Summary(pl.UTF-8):	Dostawca okładek z lokalnego katalogu dla odtwarzacza Gnome Music Player Client
 Name:		gmpc-plugin-mdcover-provider
-Version:	0.16.0
+Version:	0.18.100
 Release:	1
 License:	GPL
 Group:		X11/Applications/Sound
-Source0:	http://download.sarine.nl/Programs/gmpc/0.16.0/gmpc-mdcover-%{version}.tar.gz
-# Source0-md5:	838e78d6df59adb51cbfbabb5cd1bcf8
-URL:		http://gmpc.sarine.nl/
+Source0:	http://dl.sourceforge.net/musicpd/%{source_name}-%{version}.tar.gz
+# Source0-md5:	2344508cf5552e183c1996d93aa6644f
+URL:		http://gmpc.wikia.com/wiki/GMPC_PLUGIN_MDCOVER
 BuildRequires:	autoconf
 BuildRequires:	automake
-BuildRequires:	gmpc-devel >= 0.16.0
+BuildRequires:	gmpc-devel >= 0.18.100
 BuildRequires:	gtk+2-devel >= 2:2.4
 BuildRequires:	libglade2-devel
-BuildRequires:	libmpd-devel >= 0.15.0
+BuildRequires:	libmpd-devel >= 0.18.100
 BuildRequires:	libtool
 BuildRequires:	pkgconfig
-Requires:	gmpc >= 0.16.0
+Requires:	gmpc >= 0.18.100
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -48,11 +48,13 @@ install -d $RPM_BUILD_ROOT%{_libdir}/gmpc
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
 
+%find_lang %{name} --all-name
+
 rm $RPM_BUILD_ROOT%{_libdir}/gmpc/plugins/*.la
 
 %clean
 rm -rf $RPM_BUILD_ROOT
 
-%files
+%files -f %{name}.lang
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_libdir}/gmpc/plugins/*.so
