@@ -2,22 +2,22 @@
 Summary:	Cover art from local directory provider plugin for Gnome Music Player Client
 Summary(pl.UTF-8):	Dostawca okładek z lokalnego katalogu dla odtwarzacza Gnome Music Player Client
 Name:		gmpc-plugin-mdcover-provider
-Version:	0.18.100
+Version:	0.19.0
 Release:	1
 License:	GPL
 Group:		X11/Applications/Sound
 Source0:	http://dl.sourceforge.net/musicpd/%{source_name}-%{version}.tar.gz
-# Source0-md5:	2344508cf5552e183c1996d93aa6644f
+# Source0-md5:	ff145fe84e4d5711f53a1e0004ff679b
 URL:		http://gmpc.wikia.com/wiki/GMPC_PLUGIN_MDCOVER
 BuildRequires:	autoconf
 BuildRequires:	automake
-BuildRequires:	gmpc-devel >= 0.18.100
+BuildRequires:	gmpc-devel >= 0.19.0
 BuildRequires:	gtk+2-devel >= 2:2.4
 BuildRequires:	libglade2-devel
-BuildRequires:	libmpd-devel >= 0.18.100
+BuildRequires:	libmpd-devel >= 0.19.0
 BuildRequires:	libtool
 BuildRequires:	pkgconfig
-Requires:	gmpc >= 0.18.100
+Requires:	gmpc >= 0.19.0
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
